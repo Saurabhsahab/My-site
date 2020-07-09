@@ -2,6 +2,7 @@
 
 #### :memo:**Inside repository**
 - This repository provides you that how to make and host a site.
+- Currently I'm working on it so please have patience.
 
 
 
