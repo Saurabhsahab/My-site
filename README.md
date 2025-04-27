@@ -4,7 +4,7 @@
 A modern, responsive portfolio website showcasing my professional experience, skills, and achievements as a Software Development Engineer.
 
 ## 🚀 Live Demo
-Visit the live site: [Saurabh's Portfolio](https://saurabh-upadhayay.github.io/My-site/)
+Visit the live site: [Saurabh's Portfolio](https://Saurabhsahab.github.io/knowme/)
 
 ## 🛠 Tech Stack
 
@@ -61,7 +61,7 @@ npm run build
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Saurabh-Upadhayay/My-site/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Saurabhsahab/knowme/issues).
 
 ## 📝 License
 
