@@ -1,7 +1,7 @@
 
 # Saurabh Upadhayay - Portfolio
 
-A modern, responsive portfolio website showcasing my professional experience, skills, and achievements as a Software Development Engineer.
+A clean and modern portfolio website showcasing my professional experience and skills.
 
 ## 🚀 Live Demo
 Visit the live site: [Saurabh's Portfolio](https://Saurabhsahab.github.io/knowme/)
@@ -30,8 +30,8 @@ Visit the live site: [Saurabh's Portfolio](https://Saurabhsahab.github.io/knowme
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/Saurabh-Upadhayay/My-site.git
-cd My-site
+git clone https://github.com/Saurabh-Upadhayay/knowme.git
+cd knowme
 ```
 
 2. **Install dependencies**
@@ -66,4 +66,3 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 ## 📝 License
 
 This project is [MIT](LICENSE) licensed.
-
