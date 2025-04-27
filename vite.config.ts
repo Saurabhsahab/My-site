@@ -5,32 +5,33 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/My-site/", // Important for GitHub Pages
+  // Configure base URL for GitHub Pages deployment
+  base: "/My-site/",
+  
+  // Development server configuration
   server: {
     host: "::",
     port: 8080,
   },
+  
+  // Plugin configuration
   plugins: [
     react(),
+    // Only include componentTagger in development mode
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
+  
+  // Path aliases for cleaner imports
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  
+  // Build configuration
   build: {
     outDir: "dist",
-    assetsDir: "assets",
-    minify: "terser",
     emptyOutDir: true,
-    sourcemap: false, // Disable sourcemaps for production
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-        },
-      },
-    },
+    sourcemap: false, // Disable sourcemaps in production for better performance
   },
 }));
