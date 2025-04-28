@@ -165,7 +165,7 @@ const achievementsData = [
 ];
 
 const certificationsData = [
-  "Certified Problem Solver (Basic)",
+  "Certified Problem Solver",
   "Algorithms on Graph",
   "Patent Law for Engineers and Scientists",
   "Developing Soft Skills and Personality",
