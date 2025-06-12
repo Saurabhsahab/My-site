@@ -98,7 +98,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">LinkedIn</h4>
                   <p className="text-gray-600">
-                    <a href="https://www.linkedin.com/in/ls0nic" className="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/is0nic" className="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
                       linkedin.com/in/ls0nic
                     </a>
                   </p>
