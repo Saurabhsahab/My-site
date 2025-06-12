@@ -20,13 +20,13 @@ const Projects = () => {
       title: "Combett",
       description: "Developed a fullstack platform that helps in building a community where we can help each other in every aspect of software engineering, be it coding, development, placement preparation by providing right resources and direct interactions among the community.",
       tech: ["Node.js", "Express.js", "MongoDB Atlas", "Redis"],
-      link: "https://github.com/Saurabhsahab/combett"
+      link: "https://github.com/i-s0nic/combett"
     },
     {
       title: "Data Structures Library",
       description: "A comprehensive library of data structures and algorithms implementations in C++.",
       tech: ["C++", "STL", "Algorithms"],
-      link: "https://saurabhsahab.github.io/Code_It_Out/"
+      link: "https://github.com/i-s0nic.github.io/Code_It_Out/"
     }
   ];
 

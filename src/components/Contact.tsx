@@ -114,8 +114,8 @@ const Contact = () => {
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">GitHub</h4>
                   <p className="text-gray-600">
-                    <a href="https://github.com/Saurabhsahab" className="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
-                      github.com/Saurabhsahab
+                    <a href="https://github.com/i-s0nic" className="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                      github.com/i-s0nic
                     </a>
                   </p>
                 </div>
