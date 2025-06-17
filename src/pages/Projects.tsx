@@ -26,7 +26,7 @@ const Projects = () => {
       title: "Data Structures Library",
       description: "A comprehensive library of data structures and algorithms implementations in C++.",
       tech: ["C++", "STL", "Algorithms"],
-      link: "https://github.com/i-s0nic.github.io/Code_It_Out/"
+      link: "https://i-s0nic.github.io/Code_It_Out/"
     }
   ];
 
