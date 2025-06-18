@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -54,7 +55,7 @@ const Header = () => {
   const scrollToElement = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerHeight = 80; // Fixed header height
+      const headerHeight = 100; // Increased header offset
       const elementPosition = element.offsetTop;
       const offsetPosition = elementPosition - headerHeight;
       
@@ -68,7 +69,6 @@ const Header = () => {
   const handleProjectsClick = () => {
     setIsMenuOpen(false);
     navigate('/projects');
-    // Scroll to top of the page after navigation
     setTimeout(() => {
       window.scrollTo({
         top: 0,
@@ -90,7 +90,7 @@ const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         scrolled 
           ? 'bg-white/98 backdrop-blur-xl shadow-xl border-b border-gray-200/80' 
           : 'bg-white/95 backdrop-blur-lg shadow-lg'
@@ -177,7 +177,7 @@ const Header = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden overflow-hidden bg-white/98 backdrop-blur-xl border-t border-gray-200/80 shadow-xl"
+            className="lg:hidden overflow-hidden bg-white/98 backdrop-blur-xl border-t border-gray-200/80 shadow-xl z-[110]"
           >
             <div className="max-w-7xl mx-auto px-4 py-6 space-y-3">
               {navItems.map((item) => (
