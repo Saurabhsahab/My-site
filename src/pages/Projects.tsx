@@ -13,31 +13,40 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Tax Statement Generator",
-      description: "Implemented a report generator button to send tax statement reports via email to users, facilitating proof of income and refund claims.",
-      tech: ["Golang", "SQL", "Protocol Buffers", "gRPCs", "HTML", "CSS", "JS"],
+      title: "Tax Statement Generator & Backend Systems – Fi Money",
+      description:
+          "Built and optimized multiple backend services at Fi Money, including a tax statement generator for emailing income reports, server-driven UI orchestration, live SSE streams for real-time updates, and a high-scale communication scheduler. Implemented performance optimization with Kinesis + S3 + Snowflake for real-time analytics.",
+      tech: [
+        "Golang", "SQL", "Redis", "Protocol Buffers", "gRPC", "Temporal",
+        "Kinesis", "Snowflake", "PostgreSQL", "HTML", "CSS", "JavaScript"
+      ],
       link: "https://fi.money/",
-      type: "Web Application",
+      type: "Backend Systems",
       icon: <Database className="h-6 w-6" />,
       gradient: "from-emerald-400 to-teal-600",
       bgGradient: "from-emerald-50 to-teal-50"
     },
     {
-      title: "Combett",
-      description: "Developed a fullstack platform that helps in building a community where we can help each other in every aspect of software engineering, be it coding, development, placement preparation by providing right resources and direct interactions among the community.",
-      tech: ["Node.js", "Express.js", "MongoDB Atlas", "Redis"],
-      link: "https://github.com/i-s0nic/combett",
-      type: "Full Stack Platform",
+      title: "HyperExecute – LambdaTest",
+      description:
+          "Core contributor to HyperExecute platform — worked on scheduling engine for Kane AI & Accessibility, macOS virtualization, VM execution optimization, storage lifecycle management, and WebDriver mode integration for Selenium. Improved system performance and resource utilization across multiple dimensions.",
+      tech: [
+        "Golang", "Kubernetes", "Redis", "Protocol Buffers", "gRPC", "Docker",
+        "AWS", "Azure", "Terraform", "Temporal", "CI/CD", "Grafana", "Opensearch"
+      ],
+      link: "https://www.lambdatest.com/hyperexecute",
+      type: "Smart Test Orchestration",
       icon: <Globe className="h-6 w-6" />,
       gradient: "from-purple-400 to-pink-600",
       bgGradient: "from-purple-50 to-pink-50"
     },
     {
-      title: "Data Structures Library",
-      description: "A comprehensive library of data structures and algorithms implementations in C++.",
-      tech: ["C++", "STL", "Algorithms"],
-      link: "https://github.com/i-s0nic/Code_It_Out/",
-      type: "Library",
+      title: "Data Structures & Algorithms Library",
+      description:
+          "A hand-built C++ library of optimized data structures and algorithms used in competitive programming. Includes segment trees, binary indexed trees, graph algorithms, and advanced DP patterns.",
+      tech: ["C++", "STL", "DSA", "Algorithms", "Templates"],
+      link: "https://i-s0nic.github.io/Code_It_Out/",
+      type: "Competitive Programming Resource",
       icon: <Code2 className="h-6 w-6" />,
       gradient: "from-blue-400 to-indigo-600",
       bgGradient: "from-blue-50 to-indigo-50"
