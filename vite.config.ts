@@ -4,34 +4,43 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-export default defineConfig(({ mode }) => ({
-  // Configure base URL for GitHub Pages deployment
-  base: "/knowme/",
-  
-  // Development server configuration
+// https://vitejs.dev/config/
+export default defineConfig(({ command, mode }) => ({
   server: {
     host: "::",
     port: 8080,
   },
-  
-  // Plugin configuration
   plugins: [
     react(),
-    // Only include componentTagger in development mode
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
-  
-  // Path aliases for cleaner imports
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  
-  // Build configuration
+  base: "/",
   build: {
-    outDir: "dist",
-    emptyOutDir: true,
-    sourcemap: false, // Disable sourcemaps in production for better performance
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+    minify: 'terser',
+    target: 'esnext',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          motion: ['framer-motion'],
+        },
+      },
+    },
   },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'framer-motion', 'lucide-react', 'react-router-dom']
+  },
+  esbuild: {
+    target: 'esnext',
+    format: 'esm'
+  }
 }));

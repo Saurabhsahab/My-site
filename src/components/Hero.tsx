@@ -1,126 +1,275 @@
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Code, Rocket, Star, ArrowRight, MapPin, Sparkles } from "lucide-react";
 
 const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.6, -0.05, 0.01, 0.99]
+      }
+    }
+  };
+
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      const headerHeight = 100;
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - headerHeight;
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section className="bg-gradient-to-r from-indigo-900 via-blue-800 to-indigo-900 text-white py-20 md:py-32 overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="md:w-1/2 mb-12 md:mb-0"
-          >
-            <div className="relative">
+    <section className="w-full min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.1, 1],
+            rotate: [0, 180, 360],
+            opacity: [0.2, 0.4, 0.2]
+          }}
+          transition={{ 
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-200/30 to-blue-200/30 rounded-full blur-3xl"
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1.1, 1, 1.1],
+            rotate: [360, 180, 0],
+            opacity: [0.15, 0.35, 0.15]
+          }}
+          transition={{ 
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"
+        />
+      </div>
+
+      <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid lg:grid-cols-2 gap-20 items-center"
+        >
+          <div className="text-center lg:text-left space-y-10">
+            <motion.div variants={itemVariants}>
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.1 }}
-                transition={{ delay: 0.5, duration: 1 }}
-                className="absolute -left-10 -top-10 text-8xl font-bold text-white opacity-10"
-              >
-                SDE
-              </motion.div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 relative z-10">
-                Saurabh Upadhayay
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 1.5, delay: 0.5 }}
+                className="h-1.5 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 rounded-full mb-8 max-w-32 mx-auto lg:mx-0"
+              />
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <motion.span 
+                  className="block text-gray-900 mb-2"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Saurabh
+                </motion.span>
+                <motion.span 
+                  className="block bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Upadhayay
+                </motion.span>
               </h1>
-            </div>
+            </motion.div>
             
-            <h2 className="text-xl md:text-2xl mb-6 text-indigo-200">
-              Member of Technical Staff at LambdaTest
-            </h2>
-            <p className="text-lg md:text-xl mb-8 text-indigo-100 max-w-xl">
-              Backend specialist with expertise in system optimization, virtualization, and high-performance applications.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link 
-                to="/contact" 
-                className="px-8 py-3 bg-white text-indigo-900 font-medium rounded-md hover:bg-indigo-100 transition-colors transform hover:-translate-y-1 hover:shadow-lg duration-300"
+            <motion.div variants={itemVariants} className="space-y-6">
+              <div className="flex items-center justify-center lg:justify-start space-x-4">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  className="w-3 h-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full"
+                />
+                <h2 className="text-xl md:text-2xl font-bold text-gray-800">
+                  Member of Technical Staff at 
+                  <motion.span 
+                    className="text-purple-700 ml-2 font-extrabold"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    LambdaTest
+                  </motion.span>
+                </h2>
+              </div>
+              
+              <div className="flex items-center justify-center lg:justify-start text-gray-700 space-x-3">
+                <MapPin className="w-5 h-5 text-purple-600" />
+                <span className="font-semibold text-lg">Noida, Uttar Pradesh, India</span>
+              </div>
+            </motion.div>
+            
+            <motion.p 
+              variants={itemVariants}
+              className="text-lg md:text-xl leading-relaxed text-gray-700 max-w-2xl mx-auto lg:mx-0 font-medium"
+            >
+              Crafting high-performance backend solutions with expertise in 
+              <motion.span 
+                className="text-purple-800 font-bold mx-1 px-2 py-1 bg-purple-100 rounded-lg"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
               >
+                system optimization
+              </motion.span>, 
+              <motion.span 
+                className="text-blue-800 font-bold mx-1 px-2 py-1 bg-blue-100 rounded-lg"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                virtualization
+              </motion.span>, and 
+              <motion.span 
+                className="text-indigo-800 font-bold mx-1 px-2 py-1 bg-indigo-100 rounded-lg"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                scalable applications
+              </motion.span>.
+            </motion.p>
+            
+            <motion.div 
+              variants={itemVariants}
+              className="flex flex-wrap gap-6 justify-center lg:justify-start"
+            >
+              <motion.button 
+                onClick={scrollToContact}
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 hover:from-purple-700 hover:via-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 flex items-center group shadow-xl hover:shadow-2xl border-2 border-transparent hover:border-white/20"
+              >
+                <Rocket className="w-5 h-5 mr-3" />
                 Get in Touch
-              </Link>
-              <Link 
-                to="/experience" 
-                className="px-8 py-3 bg-transparent border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors transform hover:-translate-y-1 duration-300"
+                <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
+              </motion.button>
+              
+              <motion.div
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.95 }}
               >
-                View Experience
-              </Link>
-            </div>
-          </motion.div>
+                <Link 
+                  to="/projects"
+                  className="bg-white hover:bg-gray-50 text-gray-900 font-bold py-4 px-8 rounded-2xl border-2 border-gray-300 hover:border-purple-400 transition-all duration-300 flex items-center group shadow-xl hover:shadow-2xl"
+                >
+                  <Star className="w-5 h-5 mr-3 text-yellow-500" />
+                  View Projects
+                  <Sparkles className="w-5 h-5 ml-3 group-hover:rotate-12 transition-transform duration-300" />
+                </Link>
+              </motion.div>
+            </motion.div>
+          </div>
           
           <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="md:w-2/5"
+            variants={itemVariants}
+            className="flex justify-center lg:justify-end"
           >
-            <div className="bg-gradient-to-br from-indigo-600 to-blue-700 p-1 rounded-2xl shadow-2xl">
-              <div className="bg-white rounded-2xl p-4">
-                <div className="bg-gray-100 rounded-xl p-6">
-                  <div className="flex mb-4 items-center">
-                    <div className="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xl font-bold">SU</div>
-                    <div className="ml-4">
-                      <h3 className="text-lg font-bold text-gray-900">Saurabh Upadhayay</h3>
-                      <p className="text-gray-600">MTS at LambdaTest</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-3 mb-4">
-                    <div className="flex items-center">
-                      <svg className="w-5 h-5 text-indigo-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                      </svg>
-                      <span className="text-gray-700">Backend Development</span>
-                    </div>
-                    <div className="flex items-center">
-                      <svg className="w-5 h-5 text-indigo-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                      </svg>
-                      <span className="text-gray-700">System Optimization</span>
-                    </div>
-                    <div className="flex items-center">
-                      <svg className="w-5 h-5 text-indigo-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                      </svg>
-                      <span className="text-gray-700">Mentorship</span>
-                    </div>
-                  </div>
-                  
-                  <div className="flex justify-between">
-                    <motion.div 
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.5, duration: 0.5 }}
-                      className="text-center"
-                    >
-                      <div className="text-2xl font-bold text-indigo-600">4+</div>
-                      <div className="text-xs text-gray-500">Years Exp</div>
-                    </motion.div>
-                    <motion.div 
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.6, duration: 0.5 }}
-                      className="text-center"
-                    >
-                      <div className="text-2xl font-bold text-indigo-600">10+</div>
-                      <div className="text-xs text-gray-500">Projects</div>
-                    </motion.div>
-                    <motion.div 
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.7, duration: 0.5 }}
-                      className="text-center"
-                    >
-                      <div className="text-2xl font-bold text-indigo-600">5+</div>
-                      <div className="text-xs text-gray-500">Technologies</div>
-                    </motion.div>
+            <div className="relative max-w-md w-full">
+              <motion.div 
+                animate={{ 
+                  scale: [1, 1.03, 1],
+                  rotate: [0, 1, -1, 0]
+                }}
+                transition={{ 
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute inset-0 bg-gradient-to-br from-purple-200/50 to-blue-200/50 rounded-3xl blur-2xl"
+              />
+              <motion.div 
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+                className="relative bg-white/98 backdrop-blur-xl rounded-3xl shadow-2xl border-2 border-gray-100/80 p-8 hover:shadow-3xl transition-all duration-500"
+              >
+                <div className="flex mb-8 items-center">
+                  <motion.div 
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-600 text-white flex items-center justify-center text-2xl font-bold shadow-xl relative overflow-hidden"
+                  >
+                    <span className="relative z-10">SU</span>
+                    <motion.div
+                      animate={{ scale: [0, 1, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="absolute inset-0 bg-white/20 rounded-2xl"
+                    />
+                  </motion.div>
+                  <div className="ml-6">
+                    <h3 className="text-xl font-bold text-gray-900">Saurabh Upadhayay</h3>
+                    <p className="text-purple-700 font-bold text-lg">MTS at LambdaTest</p>
                   </div>
                 </div>
-              </div>
+                
+                <div className="space-y-5 mb-8">
+                  {[
+                    { icon: "💻", text: "Backend Development", color: "from-blue-600 to-cyan-600" },
+                    { icon: "⚡", text: "System Optimization", color: "from-yellow-600 to-orange-600" },
+                    { icon: "🚀", text: "Technical Leadership", color: "from-emerald-600 to-teal-600" }
+                  ].map((item, index) => (
+                    <motion.div 
+                      key={index}
+                      whileHover={{ x: 8, scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex items-center p-6 rounded-xl bg-gray-50/90 backdrop-blur-sm border-2 border-gray-100 hover:bg-white hover:border-gray-200 hover:shadow-lg transition-all duration-300"
+                    >
+                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center text-white text-xl mr-5 shadow-lg`}>
+                        {item.icon}
+                      </div>
+                      <span className="text-gray-800 font-bold text-lg">{item.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                <div className="grid grid-cols-3 gap-4">
+                  {[
+                    { value: "4+", label: "Years Exp", color: "text-purple-700" },
+                    { value: "10+", label: "Projects", color: "text-blue-700" },
+                    { value: "5+", label: "Technologies", color: "text-indigo-700" }
+                  ].map((stat, index) => (
+                    <motion.div 
+                      key={index}
+                      whileHover={{ y: -5, scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                      className="text-center p-6 rounded-xl bg-gradient-to-br from-white/95 to-gray-50/95 backdrop-blur-sm border-2 border-gray-100 hover:from-gray-50/95 hover:to-white/95 hover:border-gray-200 hover:shadow-lg transition-all duration-300"
+                    >
+                      <div className={`text-3xl font-bold ${stat.color} mb-2`}>{stat.value}</div>
+                      <div className="text-sm text-gray-600 font-semibold">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
