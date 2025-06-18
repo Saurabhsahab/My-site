@@ -3,29 +3,31 @@ import { motion } from "framer-motion";
 const skillsData = {
   technical: [
     { name: "Golang", level: 90 },
+    { name: "System Design", level: 90 }, 
+    { name: "Backend Development", level: 90 },
     { name: "System Optimization", level: 85 },
     { name: "Virtualization", level: 85 },
-    { name: "Backend Development", level: 90 },
-    { name: "Kubernetes", level: 80 },
+    { name: "Kubernetes", level: 85 },
     { name: "Redis", level: 85 },
     { name: "SQL", level: 85 },
     { name: "Protocol Buffers", level: 85 },
     { name: "gRPC", level: 85 },
-    { name: "JavaScript", level: 80 },
-    { name: "Test Automation", level: 85 },
     { name: "Java", level: 80 },
     { name: "Python", level: 80 },
+    { name: "JavaScript", level: 75 },
     { name: "C++", level: 75 },
   ],
   tools: [
-    "AWS", "Azure", "Docker", "Git", "PostgreSQL", 
-    "CockroachDB", "Selenium", "CI/CD", "Temporal", 
-    "macOS", "Linux", "HyperExecute", "Snowflake"
+    "AWS", "Azure", "Docker", "Kinesis", "Terraform",
+    "Git", "PostgreSQL", "MySQL", "CockroachDB",
+    "Selenium", "CI/CD", "Temporal", "HyperExecute",
+    "macOS", "Linux", "Snowflake", "Grafana", "Kafka",
+    "NodeJS", "Consul", "SumoLogic", "OpenSearch", "DynamoDB"
   ],
   soft: [
-    "Problem Solving", "Mentorship", "Technical Communication", 
-    "Team Collaboration", "Time Management", "Adaptability", 
-    "Leadership", "Innovation"
+    "Problem Solving", "Mentorship", "Technical Communication",
+    "Team Collaboration", "Time Management", "Adaptability",
+    "Leadership", "Ownership", "System Thinking"
   ]
 };
 
