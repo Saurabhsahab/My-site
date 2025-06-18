@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Mail, MapPin, Linkedin, Github, Phone, Send, CheckCircle, User, MessageSquare } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -39,8 +40,38 @@ const Contact = () => {
   };
   
   return (
-    <section id="contact" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.1, 1],
+            rotate: [0, 180, 360],
+            opacity: [0.05, 0.15, 0.05]
+          }}
+          transition={{ 
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-to-br from-purple-300/20 via-blue-300/20 to-cyan-300/20 rounded-full blur-3xl"
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1.1, 1, 1.1],
+            rotate: [360, 180, 0],
+            opacity: [0.05, 0.1, 0.05]
+          }}
+          transition={{ 
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-gradient-to-br from-blue-300/20 via-purple-300/20 to-pink-300/20 rounded-full blur-3xl"
+        />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,139 +79,203 @@ const Contact = () => {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            Have a project in mind or want to explore collaboration opportunities? Feel free to reach out!
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "100%" }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="h-1 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 rounded-full mb-6 max-w-32 mx-auto"
+          />
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-purple-800 to-blue-800 bg-clip-text text-transparent">
+            Get In Touch
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Have a project in mind or want to explore collaboration opportunities? I'd love to hear from you!
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="space-y-8"
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Contact Information</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="bg-indigo-100 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">Email</h4>
-                  <p className="text-gray-600">usaurabh207@gmail.com</p>
-                </div>
-              </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50">
+              <h3 className="text-3xl font-bold mb-8 text-gray-900 flex items-center">
+                <motion.div 
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                  className="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mr-4"
+                >
+                  <Phone className="w-5 h-5 text-white" />
+                </motion.div>
+                Contact Information
+              </h3>
               
-              <div className="flex items-start">
-                <div className="bg-indigo-100 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">Location</h4>
-                  <p className="text-gray-600">Noida, Uttar Pradesh, India</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-indigo-100 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">LinkedIn</h4>
-                  <p className="text-gray-600">
-                    <a href="https://www.linkedin.com/in/is0nic" className="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
-                      linkedin.com/in/ls0nic
-                    </a>
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-indigo-100 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">GitHub</h4>
-                  <p className="text-gray-600">
-                    <a href="https://github.com/i-s0nic" className="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
-                      github.com/i-s0nic
-                    </a>
-                  </p>
-                </div>
+              <div className="space-y-6">
+                <motion.div 
+                  whileHover={{ x: 5, scale: 1.02 }}
+                  className="flex items-center p-6 rounded-2xl bg-gradient-to-r from-blue-50/80 to-cyan-50/80 hover:from-blue-100/80 hover:to-cyan-100/80 transition-all duration-300 border border-blue-100/50 backdrop-blur-sm"
+                >
+                  <div className="bg-gradient-to-br from-blue-500 to-cyan-500 p-4 rounded-2xl mr-6 shadow-lg">
+                    <Mail className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-1">Email</h4>
+                    <p className="text-gray-600 font-medium">usaurabh207@gmail.com</p>
+                  </div>
+                </motion.div>
+                
+                <motion.div 
+                  whileHover={{ x: 5, scale: 1.02 }}
+                  className="flex items-center p-6 rounded-2xl bg-gradient-to-r from-purple-50/80 to-pink-50/80 hover:from-purple-100/80 hover:to-pink-100/80 transition-all duration-300 border border-purple-100/50 backdrop-blur-sm"
+                >
+                  <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-4 rounded-2xl mr-6 shadow-lg">
+                    <MapPin className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-1">Location</h4>
+                    <p className="text-gray-600 font-medium">Noida, Uttar Pradesh, India</p>
+                  </div>
+                </motion.div>
+                
+                <motion.div 
+                  whileHover={{ x: 5, scale: 1.02 }}
+                  className="flex items-center p-6 rounded-2xl bg-gradient-to-r from-indigo-50/80 to-blue-50/80 hover:from-indigo-100/80 hover:to-blue-100/80 transition-all duration-300 border border-indigo-100/50 backdrop-blur-sm"
+                >
+                  <div className="bg-gradient-to-br from-indigo-500 to-blue-500 p-4 rounded-2xl mr-6 shadow-lg">
+                    <Linkedin className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-1">LinkedIn</h4>
+                    <p className="text-gray-600">
+                      <a href="https://www.linkedin.com/in/is0nic" className="text-indigo-600 hover:text-indigo-800 transition-colors font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                        linkedin.com/in/ls0nic
+                      </a>
+                    </p>
+                  </div>
+                </motion.div>
+                
+                <motion.div 
+                  whileHover={{ x: 5, scale: 1.02 }}
+                  className="flex items-center p-6 rounded-2xl bg-gradient-to-r from-gray-50/80 to-slate-50/80 hover:from-gray-100/80 hover:to-slate-100/80 transition-all duration-300 border border-gray-100/50 backdrop-blur-sm"
+                >
+                  <div className="bg-gradient-to-br from-gray-700 to-gray-900 p-4 rounded-2xl mr-6 shadow-lg">
+                    <Github className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-1">GitHub</h4>
+                    <p className="text-gray-600">
+                      <a href="https://github.com/i-s0nic" className="text-gray-700 hover:text-gray-900 transition-colors font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                        github.com/i-s0nic
+                      </a>
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </div>
             
-            <div className="mt-12">
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Open to Opportunities</h3>
-              <p className="text-gray-600">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-green-50/80 to-emerald-50/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-green-100/50"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 flex items-center">
+                <motion.div 
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                  className="w-8 h-8 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center mr-3"
+                >
+                  <CheckCircle className="w-4 h-4 text-white" />
+                </motion.div>
+                Open to Opportunities
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
                 I'm currently open to new opportunities in software engineering and backend development. 
                 If you're looking for a motivated, skilled, and collaborative engineer ready to make an impact, 
                 let's connect and discuss how we can work together.
               </p>
-            </div>
+            </motion.div>
           </motion.div>
           
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gray-50 rounded-xl p-8 shadow-sm"
+            className="bg-white/90 backdrop-blur-sm rounded-3xl p-10 shadow-2xl border border-white/50"
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Send a Message</h3>
+            <h3 className="text-3xl font-bold mb-8 text-gray-900 flex items-center">
+              <motion.div 
+                whileHover={{ rotate: 10, scale: 1.1 }}
+                className="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mr-4"
+              >
+                <MessageSquare className="w-5 h-5 text-white" />
+              </motion.div>
+              Send a Message
+            </h3>
             
             {isSubmitted ? (
-              <div className="bg-green-50 text-green-800 rounded-lg p-6 text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h4 className="text-xl font-bold mb-2">Message Sent!</h4>
-                <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
-              </div>
+              <motion.div 
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                className="bg-gradient-to-r from-green-50 to-emerald-50 text-green-800 rounded-2xl p-8 text-center border border-green-200/50 shadow-lg"
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                >
+                  <CheckCircle className="h-16 w-16 mx-auto mb-4 text-green-500" />
+                </motion.div>
+                <h4 className="text-2xl font-bold mb-3">Message Sent!</h4>
+                <p className="text-lg">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+              </motion.div>
             ) : (
-              <form onSubmit={handleSubmit}>
-                <div className="mb-6">
-                  <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Your Name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    value={formData.name} 
-                    onChange={handleChange} 
-                    required 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    placeholder="John Doe"
-                  />
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-gray-700 font-semibold mb-3 flex items-center">
+                      <User className="w-4 h-4 mr-2 text-purple-600" />
+                      Your Name
+                    </label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name" 
+                      value={formData.name} 
+                      onChange={handleChange} 
+                      required 
+                      className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-gray-700 font-semibold mb-3 flex items-center">
+                      <Mail className="w-4 h-4 mr-2 text-blue-600" />
+                      Your Email
+                    </label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      value={formData.email} 
+                      onChange={handleChange} 
+                      required 
+                      className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                      placeholder="john@example.com"
+                    />
+                  </div>
                 </div>
                 
-                <div className="mb-6">
-                  <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Your Email</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    value={formData.email} 
-                    onChange={handleChange} 
-                    required 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
-                
-                <div className="mb-6">
-                  <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">Subject</label>
+                <div>
+                  <label htmlFor="subject" className="block text-gray-700 font-semibold mb-3 flex items-center">
+                    <MessageSquare className="w-4 h-4 mr-2 text-cyan-600" />
+                    Subject
+                  </label>
                   <input 
                     type="text" 
                     id="subject" 
@@ -188,40 +283,48 @@ const Contact = () => {
                     value={formData.subject} 
                     onChange={handleChange} 
                     required 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                    className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-300 bg-white/80 backdrop-blur-sm"
                     placeholder="Project Opportunity"
                   />
                 </div>
                 
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Message</label>
+                <div>
+                  <label htmlFor="message" className="block text-gray-700 font-semibold mb-3">Message</label>
                   <textarea 
                     id="message" 
                     name="message" 
-                    rows={5} 
+                    rows={6} 
                     value={formData.message} 
                     onChange={handleChange} 
                     required 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors resize-none"
+                    className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300 resize-none bg-white/80 backdrop-blur-sm"
                     placeholder="I'd like to discuss a potential project..."
                   ></textarea>
                 </div>
                 
-                <button 
+                <motion.button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className={`w-full py-3 px-6 rounded-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`w-full py-5 px-8 rounded-xl font-bold text-white bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 transition-all duration-500 flex items-center justify-center shadow-xl hover:shadow-purple-500/25 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
                   {isSubmitting ? (
-                    <span className="flex items-center justify-center">
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
+                    <span className="flex items-center">
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-3"
+                      />
                       Sending...
                     </span>
-                  ) : 'Send Message'}
-                </button>
+                  ) : (
+                    <span className="flex items-center">
+                      <Send className="w-5 h-5 mr-3" />
+                      Send Message
+                    </span>
+                  )}
+                </motion.button>
               </form>
             )}
           </motion.div>

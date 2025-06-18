@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,6 +25,12 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 262 83% 58%;
     --radius: 0.5rem;
+    
+    /* Portfolio-specific colors */
+    --portfolio-purple: 147 51% 43%;
+    --portfolio-blue: 217 91% 60%;
+    --portfolio-cyan: 187 100% 42%;
+    --portfolio-gradient: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #06b6d4 100%);
   }
 }
 
@@ -38,6 +45,9 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
     line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
@@ -46,7 +56,7 @@ html {
   scroll-padding-top: 6rem;
 }
 
-/* Enhanced scrollbar with better colors */
+/* Consistent scrollbar styling */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -79,7 +89,7 @@ html {
   --tw-ring-color: rgba(168, 85, 247, 0.7);
 }
 
-/* Enhanced animations with better easing */
+/* Consistent animations throughout the portfolio */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -140,6 +150,18 @@ html {
   }
 }
 
+@keyframes portfolioGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -169,6 +191,11 @@ html {
 
 .animate-glow {
   animation: glow 4s ease-in-out infinite;
+}
+
+.animate-portfolio-gradient {
+  background-size: 400% 400%;
+  animation: portfolioGradient 6s ease infinite;
 }
 
 .container-custom {
@@ -207,7 +234,7 @@ img {
   -webkit-backdrop-filter: blur(48px);
 }
 
-/* Enhanced shadows with better colors */
+/* Consistent shadow system */
 .shadow-3xl {
   box-shadow: 
     0 35px 60px -12px rgba(0, 0, 0, 0.25),
@@ -226,7 +253,13 @@ img {
     0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
-/* Enhanced button and interactive elements */
+.shadow-glow-cyan {
+  box-shadow: 
+    0 10px 40px rgba(6, 182, 212, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Consistent interactive elements */
 button, a, [role="button"] {
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -235,33 +268,39 @@ button, a, [role="button"] {
   contain: layout style paint;
 }
 
-/* Enhanced text with better contrast and shadows */
+/* Enhanced typography with consistent styling */
 h1, h2, h3, h4, h5, h6 {
   @apply text-gray-900 font-bold;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 p, span {
   @apply text-gray-700;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Enhanced contrast for better readability */
+/* Enhanced text contrast */
 .text-contrast {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Enhanced card styling with better gradients */
+/* Consistent card styling throughout portfolio */
 .card-enhanced {
-  background-color: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(48px);
-  -webkit-backdrop-filter: blur(48px);
-  border: 2px solid rgba(243, 244, 246, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(243, 244, 246, 0.8);
   box-shadow: 
     0 25px 50px -12px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(255, 255, 255, 0.3);
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   z-index: 10;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 .card-enhanced:hover {
@@ -273,7 +312,7 @@ p, span {
   z-index: 20;
 }
 
-/* Better spacing with enhanced rhythm */
+/* Consistent spacing system */
 .section-spacing {
   @apply py-32;
 }
@@ -282,7 +321,7 @@ p, span {
   @apply space-y-10;
 }
 
-/* Enhanced gradient backgrounds */
+/* Portfolio-specific gradient backgrounds */
 .bg-gradient-enhanced {
   background: linear-gradient(135deg, 
     rgba(249, 250, 251, 0.95) 0%, 
@@ -290,6 +329,18 @@ p, span {
     rgba(248, 250, 252, 0.95) 50%,
     rgba(239, 246, 255, 0.98) 75%,
     rgba(238, 242, 255, 0.95) 100%
+  );
+}
+
+.bg-portfolio-gradient {
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #06b6d4 100%);
+}
+
+.bg-portfolio-gradient-soft {
+  background: linear-gradient(135deg, 
+    rgba(168, 85, 247, 0.1) 0%, 
+    rgba(59, 130, 246, 0.1) 50%, 
+    rgba(6, 182, 212, 0.1) 100%
   );
 }
 
@@ -312,7 +363,7 @@ p, span {
   box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.3), 0 0 0 8px white;
 }
 
-/* Enhanced loading states */
+/* Loading states with consistent styling */
 .loading-shimmer {
   background: linear-gradient(
     90deg,
@@ -324,7 +375,7 @@ p, span {
   animation: shimmer 2s infinite;
 }
 
-/* Fix for overlapping elements */
+/* Consistent z-index system */
 .main-content {
   position: relative;
   z-index: 10;
@@ -339,4 +390,50 @@ p, span {
   position: relative;
   z-index: 20;
   isolation: isolate;
+}
+
+/* Portfolio-specific utilities */
+.text-portfolio-gradient {
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-portfolio-gradient {
+  border-image: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #06b6d4 100%) 1;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass-effect-strong {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Consistent button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-500 shadow-xl;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-gray-50 text-gray-900 font-bold py-4 px-8 rounded-xl border-2 border-gray-200 hover:border-purple-300 transition-all duration-500 shadow-xl;
+}
+
+/* Ensure crisp text rendering */
+.text-crisp {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
