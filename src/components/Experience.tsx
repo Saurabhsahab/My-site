@@ -35,7 +35,7 @@ const experienceData = [
         description: "Created a WebDriver mode for Selenium in HyperExecute, reducing one-hop latency by 25%, thereby improving test execution times and benefiting automated testing.",
       },
     ],
-    technologies: "Golang, Virtualization, HyperExecute, Selenium, macOS, Test Automation, System Optimization",
+    technologies: "Golang, MySQL, Kubernetes, Apache Kafka, Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), Microservices, Back-End Web Development, Distributed Systems, Platform as a Service (PaaS), Software as a Service (SaaS), B2B Software, Engineering, Test Orchestration, Desktop Virtualization, Security, Scalable Architecture, Virtualization, HyperExecute, Selenium, macOS, Test Automation, System Optimization",
   },
   {
     company: "Epifi Technologies India Pvt. Ltd. (Fi Money)",
@@ -65,7 +65,7 @@ const experienceData = [
         description: "Overhauled transaction processing using Amazon Kinesis for direct event writing to S3, increasing data retrieval speed by 40% and enabling immediate Snowflake analysis.",
       },
     ],
-    technologies: "Golang, SQL, Protocol Buffers, gRPCs, HTML, CSS, JavaScript, Temporal, Kubernetes, Redis, CockroachDB, PostgreSQL",
+    technologies: "Golang, gRPC, Kubernetes, Snowflake, Temporal.io, PostgreSQL, CockroachDB, Apache Kafka, Amazon Kinesis, Amazon ECS, Protocol Buffers, Distributed Systems, Scalable Architecture, Microservices, Back-End Web Development, FinTech",
   },
   {
     company: "Epifi Technologies India Pvt. Ltd. (Fi Money)",
@@ -87,7 +87,7 @@ const experienceData = [
         description: "Optimized high throughput DAOs and RPCs utilizing Redis for caching, reducing database load and enhancing performance by almost 50-70% while cutting infrastructure costs by 9%.",
       },
     ],
-    technologies: "Golang, SQL, Protocol Buffers, gRPCs, HTML, CSS, JavaScript",
+    technologies: "Golang, gRPC, Kubernetes, Snowflake, Temporal.io, PostgreSQL, CockroachDB, Apache Kafka, Amazon Kinesis, Amazon Web Services (AWS), Amazon ECS, Protocol Buffers, Distributed Systems, Scalable Architecture, Microservices, Back-End Web Development, FinTech",
   },
   {
     company: "Masai",
@@ -153,7 +153,7 @@ const experienceData = [
         description: "Added unit tests for automation features, resulting in 30% improved test coverage.",
       },
     ],
-    technologies: "Python, Django,DRF, SQL, Vehicle Fleet Management, Unit Testing",
+    technologies: "Python, Django, Django REST Framework, PostgreSQL, Databases, Microservices, Distributed Systems, Object-Oriented Programming (OOP), Backend Development, Software Development, Linux, Teamwork",
   },
 ];
 
